@@ -1,5 +1,7 @@
 # Twitter mood as a stock market predictor during Covid-19 outbreaks
 
+**I submitted this research as my Master of Science dissertation at the London School of Economics.**
+
 ## Aims and objectives
 
 At the beginning of the global Covid-19 outbreak in February and March 2020, the Standard & Poor 500 (S&P500) index suffered one of its most sizable historical crashes. Then, in the months that followed, a volatile price rise brought the S&P500 index back to, and even beyond, its pre-pandemic price levels. The purpose of this paper is to investigate whether the stock market developments between February and October 2020 could be predicted through public mood expressed on social media. 
