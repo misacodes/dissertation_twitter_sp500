@@ -8,19 +8,19 @@ abstract: |
   investigate whether the stock market developments between February and
   October 2020 could be predicted through public mood expressed on
   social media. To estimate the public mood during the Covid-19 health
-  emergency, we calculate the daily prevalence of fear, joy,
+  emergency, I calculate the daily prevalence of fear, joy,
   anticipation and trust expressions, as well as the overall sentiment
-  index of Covid-19 themed posts on Twitter. We then test the predictive
+  index of Covid-19 themed posts on Twitter. I then test the predictive
   power of each aggregated emotion series and the sentiment index for
   S&P500 prices by using a linear Granger causality model and a fully
-  connected neural network. Our results indicate that the accuracy of
+  connected neural network. The results indicate that the accuracy of
   technical S&P500 forecasts can be substantially improved with the
   inclusion of multiple aggregate emotion metrics. Twitter fear, in
   particular, consistently linearly predicts S&P500 prices for up to six
-  trading days ahead. Also, including emotion metrics in our fully
+  trading days ahead. Also, including emotion metrics in the fully
   connected neural network enhances out-of-sample prediction. The
   unidimensional Twitter sentiment index, on the other hand, brings
-  little forecasting value. Our findings might be of interest to equity
+  little forecasting value. My findings might be of interest to equity
   index investors and, furthermore, they offer theoretical support to
   the behavioural finance theory linking public mood with investor
   behaviour.
