@@ -1,5 +1,5 @@
 ---
-Aim and objectives: |
+Aim and objectives: 
   At the beginning of the global Covid-19 outbreak in February and March
   2020, the Standard & Poor 500 (S&P500) index suffered one of its most
   sizable historical crashes. Then, in the months that followed, a
@@ -10,7 +10,7 @@ Aim and objectives: |
   social media. 
   
   ---
-Method: |
+Method: 
   To estimate the public mood during the Covid-19 health
   emergency, I calculate the daily prevalence of fear, joy,
   anticipation and trust expressions, as well as the overall sentiment
@@ -19,7 +19,7 @@ Method: |
   S&P500 prices by using a linear Granger causality model and a fully
   connected neural network. 
     ---
-Results: |
+Results: 
   The results indicate that the accuracy of
   technical S&P500 forecasts can be substantially improved with the
   inclusion of multiple aggregate emotion metrics. Twitter fear, in
