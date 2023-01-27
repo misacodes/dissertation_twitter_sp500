@@ -14,10 +14,10 @@ therefore, unavailable.
 The missing S&P500 prices for weekends and stock market holidays can be
 addressed either by (a) using linear interpolation to fill in the time
 series gaps, as in Davis et al. (2021) or by (b) excluding these days
-entirely from analysis, as in Bollen et al. (2011). We exclude the days
+entirely from analysis, as in Bollen et al. (2011). I exclude the days
 from analysis to prevent potential bias that interpolation could
 introduce. Nonetheless, to be able to link S&P500 prices to the Twitter
-data, we must also exclude the same days from the Twitter dataset.
+data, I must also exclude the same days from the Twitter dataset.
 
 ## References
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational
