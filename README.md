@@ -1,5 +1,9 @@
-##Aims and objectives\
-  At the beginning of the global Covid-19 outbreak in February and March
+# Variables of Interest
+
+
+
+
+At the beginning of the global Covid-19 outbreak in February and March
   2020, the Standard & Poor 500 (S&P500) index suffered one of its most
   sizable historical crashes. Then, in the months that followed, a
   volatile price rise brought the S&P500 index back to, and even beyond,
