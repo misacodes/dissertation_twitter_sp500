@@ -6,7 +6,7 @@ I utilize a Twitter dataset accessible from IEEE dataport Lamsal (2021). This da
 ### Rehydration
 In order to obtain the original Tweet texts, I rehydrate the Tweet IDs using `twarc` Python library. More specifically, I recover a random sample of 100,000 Tweet IDs for each day under analysis, rather than all the Tweet IDs that are available in the IEEE dataset. This decision is driven by computational limitations on one hand, and my objective to ensure an equal representation of Tweets from all time zones in the analysis on the other hand. 
 
-### Time window
+### Time window selection
 I center the analysis on the time period between the end of February and beginning of October 2020 to capture the stock market crash in early
 March 2020 and then the stock market recovery. Although I would like to incorporate a longer time period prior to the March market crash,
 Covid-related Twitter data from prior to February 28, 2020 are very limited in number and the data collection procedure for this period
