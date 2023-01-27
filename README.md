@@ -1,5 +1,5 @@
 ---
-abstract: |
+Abstract: |
   At the beginning of the global Covid-19 outbreak in February and March
   2020, the Standard & Poor 500 (S&P500) index suffered one of its most
   sizable historical crashes. Then, in the months that followed, a
@@ -7,13 +7,13 @@ abstract: |
   its pre-pandemic price levels. The purpose of this paper is to
   investigate whether the stock market developments between February and
   October 2020 could be predicted through public mood expressed on
-  social media. To estimate the public mood during the Covid-19 health
+  social media. \\To estimate the public mood during the Covid-19 health
   emergency, I calculate the daily prevalence of fear, joy,
   anticipation and trust expressions, as well as the overall sentiment
   index of Covid-19 themed posts on Twitter. I then test the predictive
   power of each aggregated emotion series and the sentiment index for
   S&P500 prices by using a linear Granger causality model and a fully
-  connected neural network. The results indicate that the accuracy of
+  connected neural network. \\The results indicate that the accuracy of
   technical S&P500 forecasts can be substantially improved with the
   inclusion of multiple aggregate emotion metrics. Twitter fear, in
   particular, consistently linearly predicts S&P500 prices for up to six
