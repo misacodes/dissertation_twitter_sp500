@@ -32,7 +32,7 @@ Once these emotions and the sentiment index are obtained, I aggregate them at a 
 
 ## References
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.\
-Jockers, M. (2017). Package ‘syuzhet’. URL: https://cran.r-project.org/web/packages/syuzhet \
+Jockers, M. (2017). Package ‘syuzhet’. URL: [https://cran.r-project.org/web/packages/syuzhet](https://cran.r-project.org/web/packages/syuzhet/) \
 Lachanski, M. (2016). Did twitter mood really predict the djia?: Misadventures in big data for finance. Penn Journal of Economics, 8–48.\
 Lamsal, R. (2021). Design and analysis of a large-scale covid-19 tweets dataset. Applied Intelligence, 51 (5), 2790–2804.\
 Mohammad, S. M., & Turney, P. D. (2013). Nrc emotion lexicon. National Research Council, Canada, 2.\
