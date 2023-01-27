@@ -21,6 +21,6 @@ data, we must also exclude the same days from the Twitter dataset.
 
 ## References
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational
-science, 2 (1), 1–8.
-Davis, S. J., Liu, D., & Sheng, X. S. (2021). Stock prices and economic activity in the time of coronavirus
+science, 2 (1), 1–8.\
+Davis, S. J., Liu, D., & Sheng, X. S. (2021). Stock prices and economic activity in the time of coronavirus\
 FRED of St. Louis (2021). The St. Louis Fed’s force of data: SP 500 (SP500). Link: https://fred.stlouisfed.org/series/SP500
