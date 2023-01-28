@@ -1,110 +1,43 @@
-# Variables of Interest
+# Hypotheses and variable description
 
-**Predictor Variables**\
-As outlined in the previous section, all independent variables are
-standardized to z-scores. Based on our hypotheses, they are the z-scores
-of (1) daily sentiment; (2) fear, (3) trust, (4) joy and, finally, (5)
-anticipation all expressed on Twitter. Descriptive statistics for the 5
-independent variables are detailed in Table 3.2 . All the z-score
-variables have an approximately 0 mean and a standard deviation of 1,
-closely following the characteristics of a normally distributed series.
-However, the sentiment index and anticipation series have a noticeable
-negative skew, implying that the series have positive sentiment and high
-anticipation on most days, but there are some outliers with very
-negative sentiment/low anticipation. Moreover, all the series are
-leptokurtic, meaning that they have heavy fat tails. And especially the
-trust series appears to have extreme outliers in its values. This is
-also evidenced in Figure 3.3. Trust levels skyrocketed in October 2020,
-at the time when multiple vaccines were successfully completing phases 2
-and 3 of trials.
+### Hypotheses
 
-<figure id="fig:Emotions">
-<img src="methods/Emotions.png" style="width:12cm" />
-<figcaption>Z-scores of sentiment index and aggregate
-emotions.</figcaption>
-</figure>
+The following hypotheses are tested in this paper:\
+H1: Daily Twitter sentiment index predicts subsequent SP500 prices.\
+H2: Prevalence of fear expressions on Twitter predicts subsequent SP500 prices.\
+H3: Prevalence of trust expressions on Twitter predicts subsequent SP500 prices.\
+H4: Prevalence of anticipation expressions on Twitter predicts subsequent SP500 prices.\
+H5: Prevalence of joy expressions on Twitter predicts subsequent SP500 prices.\
+H6: Sentiment index and/or aggregate emotions increase the forecasting accuracy of our neural network in predicting SP500 prices.\
 
-  Variable          Mean     SD      Skewness   Kurtosis
-  ----------------- -------- ------- ---------- ----------
-  Sentiment index   0.104    0.894   -1.019     4.238
-  Fear              -0.050   0.914   0.193      3.581
-  Trust             0.021    1.016   0.298      15.318
-  Joy               -0.085   0.961   0.602      3.631
-  Anticipation      -0.014   0.960   -0.735     6.520
+### Preanalysis plan
 
-  : Descriptive statistics for independent variables.
+To increase the transparency of my research, and to allow other researchers to exactly replicate my study, I have published a pre-analysis plan prior to testing the hypotheses. The pre-analysis plan is publicly available on the Open Science Framework website, and it can be accessed via the following link: osf.io/anonymous/viewonly.
 
-::: tablenotes
-*Note: The kurtosis metric outlines excess kurtosis, as opposed to the
-absolute kurtosis value.\
-Hence, normal distribution would correspond to an excess kurtosis of
-zero*
-:::
+### Variables of Interest
+To overcome the small size limitations of past research, the current study uses a large sample of almost 14 million Tweets during the Covid-19 outbreaks to predict subsequent SP500 prices. I investigate the predictive power of both a unidimensional sentiment index (predictor variable 1) and multiple aggregate emotion metrics (predictor variables 2-5) by using linear, as well as non-linear techniques. 
 
-**Outcome Variable**\
-Our outcome of interest concerns the S&P500 price series. When testing
-the properties of S&P500 raw prices, we find evidence of unit root
-non-stationarity in the series (please see Table A.3 in the Appendix).
-This has no implications for the neural network model we are using,
-since neural networks do not pose any limitations on variable
-distributions. And we, therefore, use raw S&P500 prices as outcome
-variable in the neural network models.
+### Predictor Variables
 
-On the other hand, the linear Granger causality method requires that the
-variables are unit root stationary [@wooldridge2015introductory]. To
-overcome this issue and prevent any potential bias in the Granger
-causality results which unit root price series could introduce, we
-compute the day-to-day changes of the price series. This form of first
-differencing is outlined in Equation 3.2. By taking the day-to-day price
-changes, we eliminate any unit root non-stationarity (as evidenced in
-Table A.6). We, therefore, use day-to-day changes in S&P500 prices as
-our dependent variable in the Granger causality model.
+As outlined previously, all independent variables are standardized to z-scores. Based on my hypotheses, they are the z-scores of (1) daily sentiment; (2) fear, (3) trust, (4) joy and, finally, (5) anticipation all expressed on Twitter. All the z-score variables have an approximately 0 mean and a standard deviation of 1, closely following the characteristics of a normally distributed series. However, the sentiment index and anticipation series have a noticeable negative skew, implying that the series have positive sentiment and high anticipation on most days, but there are some outliers with very negative sentiment/low anticipation. Moreover, all the series are leptokurtic, meaning that they have heavy fat tails. And especially the
+trust series appears to have extreme outliers in its values. Trust levels skyrocketed in October 2020, at the time when multiple vaccines were successfully completing phases 2 and 3 of trials.
 
-::: ceqn
-$$\begin{aligned}
-D_t={S\&P500}_t-{S\&P500}_{t-1}
-\end{aligned}$$
-:::
+### Outcome Variable
 
-The descriptive statistics of the S&P 500 prices and their day-to-day
-changes are outlined in Table 3.3. We see that the daily price changes
-are, on average, positive which suggests an overall rising price trend.
-The negative skew illustrates that despite the general positive trend,
-there are some very substantial price crashes in the series.
-
-  Variable                             Mean       SD        Skewness   Kurtosis
-  ------------------------------------ ---------- --------- ---------- ----------
-  Raw S&P500 price                     3062.813   295.680   -0.635     -0.277
-  Day-to-day S&P500 price difference   2.989      72.871    -0.806     7.127
-
-  : Descriptive statistics for dependent variable.
-
-::: tablenotes
-*Note: The kurtosis metric outlines excess kurtosis, as opposed to the
-absolute kurtosis value.\
-Hence, normal distribution would correspond to an excess kurtosis of
-zero*
-:::
+My outcome of interest concerns the S&P500 price series. When testing the properties of S&P500 raw prices, I find evidence of unit root non-stationarity in the series (please see Table A.3 in this folder for more information). This has no implications for the neural network model I am using, since neural networks do not pose any limitations on variable distributions. And I, therefore, use raw S&P500 prices as outcome variable in the neural network models. On the other hand, the linear Granger causality method requires that the variables are unit root stationary [Wooldridge, 2015]. To overcome this issue and prevent any potential bias in the Granger causality results which unit root price series could introduce, I compute the day-to-day changes of the price series. By taking the day-to-day price changes, I eliminate any unit root non-stationarity. I, therefore, use day-to-day changes in S&P500 prices as
+my dependent variable in the Granger causality model. The descriptive statistics of the S&P 500 prices illustrate that there is an overall rising price trend. The negative skew suggests that despite the general positive trend, there are some very substantial price crashes in the series.
 
 # Empirical Strategy
 
 ## Linear Granger Causality
 
-We use linear Granger causality analysis to evaluate Hypotheses 1-5 as
-well as to provide partial evidence for Hypothesis 6. In general,
-Granger causality technique is based on the assumption that if a
-variable X causes variable Y, then changes in X will systematically
-precede changes in Y. Therefore, lagged values of X must be
-significantly correlation with present values of Y. It must be pointed
-out, however, that correlation does not imply causation and we are not
-testing whether one time series causes the other, but merely whether one
-time series has predictive information about the other.
+I use linear Granger causality analysis to evaluate Hypotheses 1-5 as well as to provide partial evidence for Hypothesis 6. In general,
+Granger causality technique is based on the assumption that if a variable X causes variable Y, then changes in X will systematically precede changes in Y. Therefore, lagged values of X must be significantly correlation with present values of Y. It must be pointed out, however, that correlation does not imply causation and I am not testing whether one time series causes the other, but merely whether one time series has predictive information about the other.
 
-We run two types of linear models to test our hypotheses: (1) an
-autoregressive model of past changes in S&P 500 prices, outlined in
-Equation 3.3; (2) an autoregressive model which additionally
-incorporates one of the four different emotions or the unidimensional
-Twitter sentiment index, outlined in Equation 3.4.\
+I run two types of linear models to test our hypotheses: \
+(1) anautoregressive model of past changes in S&P 500 prices,\
+(2) an autoregressive model which additionally incorporates one of the four different emotions or the unidimensional
+Twitter sentiment index.\
 
 ::: ceqn
 $$\begin{aligned}
