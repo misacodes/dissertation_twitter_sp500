@@ -1,6 +1,6 @@
 # Twitter mood as a stock market predictor during Covid-19 outbreaks
 
-* I submitted this research as my Master of Science dissertation at the London School of Economics and Political Science in August 2021. *
+*I submitted this research as my Master of Science dissertation at the London School of Economics and Political Science in August 2021.*
 
 ### Aims and objectives
 
