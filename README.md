@@ -13,3 +13,9 @@ To estimate the public mood during the Covid-19 health emergency, I calculate th
 ### Results
 
 The results indicate that the accuracy of technical S&P500 forecasts can be substantially improved with the inclusion of multiple aggregate emotion metrics. Twitter fear, in particular, consistently linearly predicts S&P500 prices for up to six trading days ahead. Also, including emotion metrics in the fully connected neural network enhances out-of-sample prediction. The unidimensional Twitter sentiment index, on the other hand, brings little forecasting value. My findings might be of interest to equity index investors and, furthermore, they offer theoretical support to the behavioural finance theory linking public mood with investor behaviour.
+
+### Disclaimer 1 - Preanalysis
+*To increase the transparency of my research, and to allow other researchers to exactly replicate my study, I have published a pre-analysis plan prior to testing the hypotheses. The pre-analysis plan is publicly available on the Open Science Framework website, and it can be accessed via the following link: osf.io/anonymous/viewonly.*
+
+### Disclaimer 2 - Data privacy
+*All stages of my methodology follow Twitter’s ethical standards (Ahmed et al., 2017); I do not publish any personal information about Twitter users in the present study.*
