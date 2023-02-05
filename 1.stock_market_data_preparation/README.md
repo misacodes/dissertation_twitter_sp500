@@ -1,5 +1,6 @@
 # S&P500 Prices
 
+### Dataset overview
 The equity price dataset consists of daily closing prices of S&P500
 downloaded from Federal Reserve Economic Data (FRED of St. Louis,
 2021). These closing prices are updated only on trading days in the U.S.
@@ -11,6 +12,7 @@ holidays, when S&P500 trading was halted (i.e.,. 10 April 2020; 25 May
 2020; 3 July, 2020; and 7 September 2020. Data for these days are,
 therefore, unavailable.
 
+### Data pre-processing
 The missing S&P500 prices for weekends and stock market holidays can be
 addressed either by (a) using linear interpolation to fill in the time
 series gaps, as in Davis et al. (2021) or by (b) excluding these days
@@ -19,7 +21,7 @@ from analysis to prevent potential bias that interpolation could
 introduce. Nonetheless, to be able to link S&P500 prices to the Twitter
 data, I must also exclude the same days from the Twitter dataset.
 
-## References
+### References
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational
 science, 2 (1), 1–8.\
 Davis, S. J., Liu, D., & Sheng, X. S. (2021). Stock prices and economic activity in the time of coronavirus.\
