@@ -37,7 +37,7 @@ Granger causality technique is based on the assumption that if a variable X caus
 I run two types of linear models to test our hypotheses: \
 (1) anautoregressive model of past changes in S&P 500 prices,\
 (2) an autoregressive model which additionally incorporates one of the four different emotions or the unidimensional
-Twitter sentiment index.\
+Twitter sentiment index.
 
 Both Model (1) and Model (2) are nested Auto Regressive Distributed Lag models. The nested structure allows me to conduct likelihood ratio F-tests. More specifically, I am testing whether the specific emotions, or the unidimensional Twitter index expressed in variable X have predictive content for S&P500 above and beyond that contained in past changes of S&P 500 prices
 (Kirchgassner, 2012).
