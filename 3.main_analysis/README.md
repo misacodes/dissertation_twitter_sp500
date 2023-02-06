@@ -39,56 +39,17 @@ I run two types of linear models to test our hypotheses: \
 (2) an autoregressive model which additionally incorporates one of the four different emotions or the unidimensional
 Twitter sentiment index.\
 
-::: ceqn
-$$\begin{aligned}
-L_1:D_t = \alpha + \sum_{i=1}^{n}{\beta_iD_{t-i} + \epsilon_t}\\ 
-L_2:D_t = \alpha + \sum_{i=1}^{n}{\beta_iD_{t-i} + \sum_{i=1}^{n}{\delta_iX_{t-i}} + \epsilon_t} 
-\end{aligned}$$
-:::
+Both Model (1) and Model (2) are nested Auto Regressive Distributed Lag models. The nested structure allows me to conduct likelihood ratio F-tests. More specifically, I am testing whether the specific emotions, or the unidimensional Twitter index expressed in variable X have predictive content for S&P500 above and beyond that contained in past changes of S&P 500 prices
+(Kirchgassner, 2012).
 
-The variable X in Model (2) represents either: (a) sentiment index, (b)
-fear, (c) joy, (d) trust, or (e) anticipation. Model (1) and Model (2)
-are nested Auto Regressive Distributed Lag models. The nested structure
-allows us to conduct likelihood ratio F-tests. More specifically, we are
-testing whether the specific emotions, or the unidimensional Twitter
-index expressed in variable X have predictive content for S&P500 above
-and beyond that contained in past changes of S&P 500 prices
-[@kirchgassner2012introduction].
-
-Granger causality test statistics are very sensitive to the lag length
-chosen for the underlying VAR model and too high selected number of lags
-(i.e. overfitting) increases the probability of false positive results
-[@bruns2019lag]. Therefore, we choose the exact lag length prior to
-testing. Given that previous research by @bollen2011twitter incorporated
-1-7 lags in their linear model specifications and found that some
-emotions Granger cause DJIA values for up to 6 days worth of lags, we
-also consider up to 6 day-lags for the Granger causality analysis. But
-out of the potential 1-6 day lag specifications, we only select the one
-lag specification that minimises both the AIC [@akaike1974new] and BIC
-[@schwarz1978estimating] prior to analysis. In case that AIC and BIC
-yield different results, we use the model which minimises AIC - as
-recommended by @thornton1985lag, @ozcicek1999lag. To illustrate, in a
-Monte Carlo simulation study by @ozcicek1999lag, the AIC criterion
-selects the true lags more frequently than BIC, and also more often than
-all other considered criteria in symmetric VAR models.
+Granger causality test statistics are very sensitive to the lag length chosen for the underlying VAR model and too high selected number of lags (i.e. overfitting) increases the probability of false positive results (Bruns et al. 2019). Therefore, I choose the exact lag length prior to testing. Given that previous research by Bollen et al. (2011) incorporated 1-7 lags in their linear model specifications and found that some emotions Granger cause DJIA values for up to 6 days worth of lags, I also consider up to 6 day-lags for the Granger causality analysis. But out of the potential 1-6 day lag specifications, I only select the one lag specification that minimises both the AIC (Akaike, 1974) and the BIC (Schwarz, 1978) prior to analysis. In case that AIC and BIC yield different results, I use the model which minimises AIC - as recommended by Thornton and Batten (1985), as well as Ozcicek and Mcmillin (1999). To illustrate, in a Monte Carlo simulation study by Ozcicek and Mcmillin (1999), the AIC criterion selects the true lags more frequently than BIC, and also more often than all other considered criteria in symmetric VAR models.
 
 ## Fully Connected Neural Network
 
-To address non-linear effects that are indisputably present in the
-actual data-generating process, and to evaluate Hypothesis 6, we use
-fully connected neural network models. Our decision to use fully
-connected networks, rather than Self-Organizing Fuzzy neural networks,
-as was performed in @bollen2011twitter, has its empirical grounding.
-Since the publishing of Bollen et al. paper, the non-linear modelling
-literature has diverted away from fuzzy logic towards modern neural
-networks, which require fewer assumptions prior to the main analysis.
-Put differently, fewer parameters must be explicitly pre-specified in
-fully connected neural network models relative to fuzzy neural networks,
-which prevents the potentiality of incorrect assumption setting
-[@goodfellow2016deep].
+To address non-linear effects that are indisputably present in the actual data-generating process, and to evaluate Hypothesis 6, I use fully connected neural network models. My decision to use fully connected networks, rather than Self-Organizing Fuzzy neural networks, as was performed in Bollen et al. (2011), has its empirical grounding. Since the publishing of Bollen et al. paper, the non-linear modelling literature has diverted away from fuzzy logic towards modern neural networks, which require fewer assumptions prior to the main analysis. Put differently, fewer parameters must be explicitly pre-specified in fully connected neural network models relative to fuzzy neural networks, which prevents the potentiality of incorrect assumption setting
+(Goodfellow et al., 2016).
 
-Moreover, other neural network models besides fully connected neural
-networks are being increasingly applied to stock market prediction,
+Moreover, other neural network models besides fully connected neural networks are being increasingly applied to stock market prediction,
 including long short-term memory networks and convolutional neural
 networks [@fischer2018deep; @chen2018stock]. However, both long
 short-term memory networks and convolutional neural network models have
@@ -167,4 +128,13 @@ Forecasting accuracy is then measured in terms of the average Mean
 Absolute Percentage Error (MAPE) and the direction accuracy (up or down)
 during the test period selected via k-Fold Cross-Validation procedure.
 The choice of MAPE and direction accuracy as key performance indicators
-was driven by past research (e.g. @bollen2011twitter).
+was driven by past research (Bollen et al., 2011).
+
+Akaike, H., 1974. A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.
+Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.
+Bruns, S.B. and Stern, D.I., 2019. Lag length selection and p-hacking in Granger causality testing: prevalence and performance of meta-regression models. Empirical Economics, 56, pp.797-830.
+Goodfellow, I., Bengio, Y. and Courville, A., 2016. Deep learning. MIT press.
+Kirchgässner, G., Wolters, J. and Hassler, U., 2012. Introduction to modern time series analysis. Springer Science & Business Media.
+Ozcicek, O. and Douglas Mcmillin, W., 1999. Lag length selection in vector autoregressive models: symmetric and asymmetric lags. Applied Economics, 31(4), pp.517-524.
+Schwarz, G., 1978. Estimating the dimension of a model. The annals of statistics, pp.461-464.
+Thornton, Daniel L., and Dallas S. Batten. "Lag-length selection and tests of Granger causality between money and income." Journal of Money, credit and Banking 17, no. 2 (1985): 164-178.
