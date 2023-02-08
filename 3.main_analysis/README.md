@@ -61,11 +61,15 @@ In mathematical terms, given that $\sigma$ is the Leaky Relu function, $x$ being
 $b_1$, $b_2$, $b_3$ being the trainable parameters for the neural network and $L$ being the error, I obtain that our neural network can
 be expressed as:
 
-$$ y_1 = \sigma(\mathbf{M_1} x p b_1) \\
+$$ 
+\begin{equation}
+y_1 = \sigma(\mathbf{M_1} x p b_1) \\
 y_2 = \sigma(\mathbf{M_2} y_1 p b_2) \\
 y_2 = \sigma(\mathbf{M_2} y_1 p b_2) \\
 y = \sigma(\mathbf{M_3} y_2 p b_3) \\
-L = (a m y)^2 $$
+L = (a m y)^2 
+\end{equation}
+$$
 
 Having calculated the loss for a given input and desired output, given
 $\alpha$ being the learning rate, we then update the trainable
