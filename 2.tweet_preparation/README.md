@@ -30,7 +30,7 @@ sentiment lexicons, such as `afinn` and `bing`, stems from its superior word siz
 ### Data post-processing
 Once these emotions and the sentiment index are obtained, I aggregate them at a daily frequency. This is to enable integration of the sentiment and emotion series with S&P500 price series. Furthermore, to enable the comparison of the sentiment index and the emotion time series, I perform a z-score normalization. Unlike Bollen et al. (2011) who perform a local normalization based on mean and standard deviation within a sliding window of k days, my z-score normalization is calculated based on a mean and standard deviation values in the entire dataset. This decision is driven by past research of Lachanski (2016) who finds that localized z-score normalization can bias Granger causality results. This form of normalization causes all emotion and sentiment time series to have a zero mean and a standard deviation of 1.
 
-## References
+### References
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.\
 Jockers, M. (2017). Package ‘syuzhet’. URL: [https://cran.r-project.org/web/packages/syuzhet](https://cran.r-project.org/web/packages/syuzhet/) \
 Lachanski, M. (2016). Did twitter mood really predict the djia?: Misadventures in big data for finance. Penn Journal of Economics, 8–48.\
