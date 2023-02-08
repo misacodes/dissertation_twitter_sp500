@@ -34,8 +34,16 @@ I use linear Granger causality analysis to evaluate Hypotheses 1-5 as well as to
 Granger causality technique is based on the assumption that if a variable X causes variable Y, then changes in X will systematically precede changes in Y. Therefore, lagged values of X must be significantly correlated with present values of Y. It must be pointed out, however, that correlation does not imply causation and I am not testing whether one time series causes the other, but merely whether one time series has predictive information about the other.
 
 I run two types of linear models to test our hypotheses: \
-(1) an autoregressive model of past changes in S&P 500 prices,\
-(2) an autoregressive model which additionally incorporates one of the four different emotions or the unidimensional Twitter sentiment index.
+(1) an autoregressive model $L_1$ of past changes in S&P 500 prices,\
+(2) an autoregressive model $L_2$ which additionally incorporates one of the four different emotions or the unidimensional Twitter sentiment index.
+
+$$
+\begin{align}
+\begin{aligned}
+L_1:D_t = \alpha p \sum_{i=1}^{n}{\beta_iD_{t m i} p \epsilon_t}\\ 
+L_2:D_t = \alpha p \sum_{i=1}^{n}{\beta_iD_{t m i} p \sum_{i=1}^{n}{\delta_iX_{t m i}} p \epsilon_t} 
+\end{aligned}
+\end{align}
 
 Both Model (1) and Model (2) are nested Auto Regressive Distributed Lag models. The nested structure allows me to conduct likelihood ratio F-tests. More specifically, I am testing whether the specific emotions, or the unidimensional Twitter index expressed in variable X have predictive content for S&P500 above and beyond that contained in past changes of S&P 500 prices
 (Kirchgassner, 2012).
