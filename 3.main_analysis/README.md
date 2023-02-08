@@ -22,11 +22,13 @@ To overcome the small size limitations of past research, the current study uses 
 
 As outlined previously, all independent variables are standardized to z-scores. My z-score calculation is as follows:
 
+$$
 \begin{align}
 \begin{aligned}
 Z_X_t = \frac{{X_t} - {\bar{X_t}}}{\sigma(X_t)}
 \end{aligned}
 \end{align}
+$$
 
 where $\bar{X_t}$ and $\sigma(X_t)$ represent the mean and standard deviation of the time series. They are the z-scores of (1) daily sentiment; (2) fear, (3) trust, (4) joy and, finally, (5) anticipation all expressed on Twitter. All the z-score variables have an approximately 0 mean and a standard deviation of 1, closely following the characteristics of a normally distributed series. However, the sentiment index and anticipation series have a noticeable negative skew, implying that the series have positive sentiment and high anticipation on most days, but there are some outliers with very negative sentiment/low anticipation. Moreover, all the series are leptokurtic, meaning that they have heavy fat tails. And especially the
 trust series appears to have extreme outliers in its values. Trust levels skyrocketed in October 2020, at the time when multiple vaccines were successfully completing phases 2 and 3 of trials.
