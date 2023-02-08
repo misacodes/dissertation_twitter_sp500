@@ -4,18 +4,13 @@
 
 The following hypotheses are tested in this paper:\
 
-$$
-\begin{align}
-\begin{aligned}
-H1: Daily Twitter sentiment index predicts subsequent SP500 prices. \\
-H2: Prevalence of fear expressions on Twitter predicts subsequent SP500 prices. \\
-H3: Prevalence of trust expressions on Twitter predicts subsequent SP500 prices. \\
-H4: Prevalence of anticipation expressions on Twitter predicts subsequent SP500 prices. \\
-H5: Prevalence of joy expressions on Twitter predicts subsequent SP500 prices. \\
+H1: Daily Twitter sentiment index predicts subsequent SP500 prices.\
+H2: Prevalence of fear expressions on Twitter predicts subsequent SP500 prices.\
+H3: Prevalence of trust expressions on Twitter predicts subsequent SP500 prices.\
+H4: Prevalence of anticipation expressions on Twitter predicts subsequent SP500 prices.\
+H5: Prevalence of joy expressions on Twitter predicts subsequent SP500 prices.\
 H6: Sentiment index and/or aggregate emotions increase the forecasting accuracy of our neural network in predicting SP500 prices.
-\end{aligned}
-\end{align}
-$$
+
 ### Preanalysis plan
 
 To increase the transparency of my research, and to allow other researchers to exactly replicate my study, I have published a pre-analysis plan prior to testing the hypotheses. The pre-analysis plan is publicly available on the Open Science Framework website, and it can be accessed via the following link: osf.io/anonymous/viewonly.
@@ -97,17 +92,7 @@ b_n^{new} = b_n^{old} - \alpha\frac{\partial L}{\partial b_n^{old}} \\
 \end{align}
 $$
 
-Given our small sample size, we divide the sample into a training set
-and a testing set by using a k-Fold Cross-Validation, rather than
-pre-specified training and testing periods. Guided by past research, we
-select 10 folds (k=10) in our k-Fold Cross-Validation procedure.
-According to @james2013introduction, k=10 provides a good compromise
-between computational cost and bias of model performance estimates.
-Forecasting accuracy is then measured in terms of the average Mean
-Absolute Percentage Error (MAPE) and the direction accuracy (up or down)
-during the test period selected via k-Fold Cross-Validation procedure.
-The choice of MAPE and direction accuracy as key performance indicators
-was driven by past research (Bollen et al., 2011).
+Given my small sample size, I divide the sample into a training set and a testing set by using a k-Fold Cross-Validation, rather than pre-specified training and testing periods. Guided by past research, I select 10 folds (k=10) in our k-Fold Cross-Validation procedure.According to James et al. (2013), k=10 provides a good compromise between computational cost and bias of model performance estimates. Forecasting accuracy is then measured in terms of the average Mean Absolute Percentage Error (MAPE) and the direction accuracy (up or down) during the test period selected via k-Fold Cross-Validation procedure. The choice of MAPE and direction accuracy as key performance indicators was driven by past research (Bollen et al., 2011).
 
 Akaike, H. (1974). A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.\
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.\
@@ -117,6 +102,7 @@ Claesen, M., & De Moor, B. (2015). Hyperparameter search in machine learning. ar
 Fischer, T., & Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. European journal of operational research, 270(2), 654-669.\
 Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press.\
 Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.\
+James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An introduction to statistical learning (Vol. 112, p. 18). New York: springer.\
 Kirchgässner, G., Wolters, J., & Hassler, U. (2012). Introduction to modern time series analysis. Springer Science & Business Media.\
 LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., & Jackel, L. D. (1989). Backpropagation applied to handwritten zip code recognition. Neural computation, 1(4), 541-551.\
 Nwankpa, C., Ijomah, W., Gachagan, A., & Marshall, S. (2018). Activation functions: Comparison of trends in practice and research for deep learning. arXiv preprint arXiv:1811.03378.\
