@@ -40,8 +40,8 @@ I run two types of linear models to test our hypotheses: \
 $$
 \begin{align}
 \begin{aligned}
-L_1:D_t = \alpha p \sum_{i=1}^{n}{\beta_iD_{t m i} p \epsilon_t}\\ 
-L_2:D_t = \alpha p \sum_{i=1}^{n}{\beta_iD_{t m i} p \sum_{i=1}^{n}{\delta_iX_{t m i}} p \epsilon_t} 
+L_1:D_t = \alpha + \sum_{i=1}^{n}{\beta_iD_{t-i} + \epsilon_t}\\ 
+L_2:D_t = \alpha + \sum_{i=1}^{n}{\beta_iD_{t-i} + \sum_{i=1}^{n}{\delta_iX_{t-i}} + \epsilon_t}
 \end{aligned}
 \end{align}
 $$
@@ -72,11 +72,10 @@ be expressed as:
 $$ 
 \begin{align}
 \begin{aligned}
-y_1 = \sigma(\mathbf{M_1} x p b_1) \\
-y_2 = \sigma(\mathbf{M_2} y_1 p b_2) \\
-y_2 = \sigma(\mathbf{M_2} y_1 p b_2) \\
-y = \sigma(\mathbf{M_3} y_2 p b_3) \\
-L = (a m y)^2 
+y_1 = \sigma(\mathbf{M_1} * x + b_1) \\
+y_2 = \sigma(\mathbf{M_2} * y_1 + b_2) \\
+y = \sigma(\mathbf{M_3} * y_2 + b_3) \\
+L = (a - y)^2
 \end{aligned}
 \end{align}
 $$
@@ -86,8 +85,8 @@ Having calculated the loss for a given input and desired output, given $\alpha$ 
 $$ 
 \begin{align}
 \begin{aligned}
-M_n^{new} = M_n^{old} m \alpha\frac{\partial L}{\partial M_n^{old}} \\
-b_n^{new} = b_n^{old} m \alpha\frac{\partial L}{\partial b_n^{old}} \\
+M_n^{new} = M_n^{old} - \alpha\frac{\partial L}{\partial M_n^{old}} \\
+b_n^{new} = b_n^{old} - \alpha\frac{\partial L}{\partial b_n^{old}} \\
 \end{aligned}
 \end{align}
 $$
