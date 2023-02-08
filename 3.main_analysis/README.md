@@ -2,7 +2,7 @@
 
 ### Hypotheses
 
-The following hypotheses are tested in this paper:\
+The following hypotheses are tested in this paper:
 
 H1: Daily Twitter sentiment index predicts subsequent SP500 prices.\
 H2: Prevalence of fear expressions on Twitter predicts subsequent SP500 prices.\
@@ -25,7 +25,7 @@ trust series appears to have extreme outliers in its values. Trust levels skyroc
 
 ### Outcome Variable
 
-My outcome of interest concerns the S&P500 price series. When testing the properties of S&P500 raw prices, I find evidence of unit root non-stationarity in the series (please see Table 1 in this folder for more information). This has no implications for the neural network model I am using, since neural networks do not pose any limitations on variable distributions. And I, therefore, use raw S&P500 prices as outcome variable in the neural network models. On the other hand, the linear Granger causality method requires that the variables are unit root stationary (Wooldridge, 2015). To overcome this issue and prevent any potential bias in the Granger causality results which unit root price series could introduce, I compute the day-to-day changes of the price series. By taking the day-to-day price changes, I eliminate any unit root non-stationarity. I, therefore, use day-to-day changes in S&P500 prices as my dependent variable in the Granger causality model. The descriptive statistics of the S&P 500 prices illustrate that there is an overall rising price trend. The negative skew suggests that despite the general positive trend, there are some very substantial price crashes in the series.
+My outcome of interest concerns the S&P500 price series. When testing the properties of S&P500 raw prices, I find evidence of unit root non-stationarity in the series. This has no implications for the neural network model I am using, since neural networks do not pose any limitations on variable distributions. And I, therefore, use raw S&P500 prices as outcome variable in the neural network models. On the other hand, the linear Granger causality method requires that the variables are unit root stationary (Wooldridge, 2015). To overcome this issue and prevent any potential bias in the Granger causality results which unit root price series could introduce, I compute the day-to-day changes of the price series. By taking the day-to-day price changes, I eliminate any unit root non-stationarity. I, therefore, use day-to-day changes in S&P500 prices as my dependent variable in the Granger causality model. The descriptive statistics of the S&P 500 prices illustrate that there is an overall rising price trend. The negative skew suggests that despite the general positive trend, there are some very substantial price crashes in the series.
 
 # Empirical Strategy
 
