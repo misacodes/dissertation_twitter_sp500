@@ -24,8 +24,7 @@ trust series appears to have extreme outliers in its values. Trust levels skyroc
 
 ### Outcome Variable
 
-My outcome of interest concerns the S&P500 price series. When testing the properties of S&P500 raw prices, I find evidence of unit root non-stationarity in the series (please see Table A.3 in this folder for more information). This has no implications for the neural network model I am using, since neural networks do not pose any limitations on variable distributions. And I, therefore, use raw S&P500 prices as outcome variable in the neural network models. On the other hand, the linear Granger causality method requires that the variables are unit root stationary [Wooldridge, 2015]. To overcome this issue and prevent any potential bias in the Granger causality results which unit root price series could introduce, I compute the day-to-day changes of the price series. By taking the day-to-day price changes, I eliminate any unit root non-stationarity. I, therefore, use day-to-day changes in S&P500 prices as
-my dependent variable in the Granger causality model. The descriptive statistics of the S&P 500 prices illustrate that there is an overall rising price trend. The negative skew suggests that despite the general positive trend, there are some very substantial price crashes in the series.
+My outcome of interest concerns the S&P500 price series. When testing the properties of S&P500 raw prices, I find evidence of unit root non-stationarity in the series (please see Table 1 in this folder for more information). This has no implications for the neural network model I am using, since neural networks do not pose any limitations on variable distributions. And I, therefore, use raw S&P500 prices as outcome variable in the neural network models. On the other hand, the linear Granger causality method requires that the variables are unit root stationary (Wooldridge, 2015). To overcome this issue and prevent any potential bias in the Granger causality results which unit root price series could introduce, I compute the day-to-day changes of the price series. By taking the day-to-day price changes, I eliminate any unit root non-stationarity. I, therefore, use day-to-day changes in S&P500 prices as my dependent variable in the Granger causality model. The descriptive statistics of the S&P 500 prices illustrate that there is an overall rising price trend. The negative skew suggests that despite the general positive trend, there are some very substantial price crashes in the series.
 
 # Empirical Strategy
 
@@ -36,8 +35,7 @@ Granger causality technique is based on the assumption that if a variable X caus
 
 I run two types of linear models to test our hypotheses: \
 (1) an autoregressive model of past changes in S&P 500 prices,\
-(2) an autoregressive model which additionally incorporates one of the four different emotions or the unidimensional
-Twitter sentiment index.
+(2) an autoregressive model which additionally incorporates one of the four different emotions or the unidimensional Twitter sentiment index.
 
 Both Model (1) and Model (2) are nested Auto Regressive Distributed Lag models. The nested structure allows me to conduct likelihood ratio F-tests. More specifically, I am testing whether the specific emotions, or the unidimensional Twitter index expressed in variable X have predictive content for S&P500 above and beyond that contained in past changes of S&P 500 prices
 (Kirchgassner, 2012).
@@ -49,61 +47,25 @@ Granger causality test statistics are very sensitive to the lag length chosen fo
 To address non-linear effects that are indisputably present in the actual data-generating process, and to evaluate Hypothesis 6, I use fully connected neural network models. My decision to use fully connected networks, rather than self-organizing fuzzy neural networks, as was performed in Bollen et al. (2011), has its empirical grounding. Since the publishing of Bollen et al. paper, the non-linear modelling literature has diverted away from fuzzy logic towards modern neural networks, which require fewer assumptions prior to the main analysis. Put differently, fewer parameters must be explicitly pre-specified in fully connected neural network models relative to fuzzy neural networks, which prevents the potentiality of incorrect assumption setting
 (Goodfellow et al., 2016).
 
-Moreover, other neural network models beside fully connected neural networks are being increasingly applied to stock market prediction, including long short-term memory networks and convolutional neural networks [@fischer2018deep; @chen2018stock]. However, both long
-short-term memory networks and convolutional neural network models have
-a well-known tendency to overfit small datasets by memorizing inputs
-rather than training, which leaves them arguably not well-suited for our
-analysis of small scale dataset
-[@hochreiter1997lstm; @lecun1989backpropagation].
+Moreover, other neural network models beside fully connected neural networks are being increasingly applied to stock market prediction, including long short-term memory networks and convolutional neural networks (Fischer and Krauss, 2018; Chen and He, 2018). However, both long short-term memory networks and convolutional neural network models have a well-known tendency to overfit small datasets by memorizing inputs rather than training, which leaves them arguably not well-suited for my analysis of small scale dataset (Hochreiter and Schmidhuber, 1997; LeCun et al. 1989).
 
-We run 2 fully connected neural network models - (1) model that takes as
-inputs only past values of S&P500 prices, and (2) model that takes as
-inputs S&P500 prices, emotions and sentiment of the past days. To
-predict the S&P500 value on day t, the inputs of our fully connected
-neural network (2) include lagged values of S&P500 prices, emotions and
-the overall sentiment of the past n days. The selected number of
-incorporated lags - n, is determined through the process of
-hyper-parameter tuning [@claesen2015hyperparameter]. This tuning
-procedure selects the best non-linear naive/baseline model (i.e., model
-with just S&P500 prices) that we can obtain given our sample size
-constraints. In consequence, the tuning procedure ensures that the
-goodness-of-fit comparison between our baseline model and the model that
-additionally includes emotions and sentiment is fair and does not
-inflate our contribution.
+I run 2 fully connected neural network models - (1) model that takes as inputs only past values of S&P500 prices, and (2) model that takes as
+inputs S&P500 prices, emotions and sentiment of the past days. To predict the S&P500 value on day t, the inputs of my fully connected neural network (2) include lagged values of S&P500 prices, emotions and the overall sentiment of the past n days. The selected number of incorporated lags - n, is determined through the process of hyper-parameter tuning (Claesen and De Moor, 2015). This tuning procedure selects the best non-linear naive/baseline model (i.e., model with just S&P500 prices) that I can obtain given my sample size constraints. In consequence, the tuning procedure ensures that the
+goodness-of-fit comparison between my baseline model and the model that additionally includes emotions and sentiment is fair and does not inflate my contribution.
 
-The sentiment and emotion inputs are linearly scaled to \[0,1\], in
-order to ensure that the mood inputs have similar initial weights in the
-model. However, since we are interested in our outcome variable of
-S&P500 prices, we do not linearly scale the S&P500 price values prior to
-analysis. This, in consequence, determines the selection of our
-activation function. The standard ReLU activation function works best
-when all input variables are linearly scaled. Since we do not linearly
-scale the lagged prices in our model, we instead use the Leaky ReLU
-activation function, which is well-suited for negative input values
-[@nwankpa2018activation]. The Leaky ReLU function is detailed in
-Appendix Figure A.1.
+The sentiment and emotion inputs are linearly scaled to \[0,1\], in order to ensure that the mood inputs have similar initial weights in the model. However, since I am interested in our outcome variable of S&P500 prices, we do not linearly scale the S&P500 price values prior to analysis. This, in consequence, determines the selection of our activation function. The standard ReLU activation function works best when all input variables are linearly scaled. Since I do not linearly scale the lagged prices in my model, I instead use the Leaky ReLU activation function, which is well-suited for negative input values (Nwakpa et al., 2018). The Leaky ReLU function is attached as Figure A.1 in this folder.
 
-Our fully connected neural network model has 3 layers. The decision to
-choose 3 layers stems from our limited sample size on one hand and the
-need to have at least 1 inner layer on the other hand. By choosing the
-relatively low number of layers, we are limiting the risk of model
-overfitting, while also ensuring that we provide some opportunity for
-the model to learn.
+My fully connected neural network model has 3 layers. The decision to choose 3 layers stems from my limited sample size on one hand and the need to have at least 1 inner layer on the other hand. By choosing the relatively low number of layers, I am limiting the risk of model overfitting, while also ensuring that I provide some opportunity for the model to learn.
 
-In mathematical terms, given that $\sigma$ is the Leaky Relu function,
-$x$ being the input, $a$ being the desired output,$M_1$, $M_2$, $M_3$,
-$b_1$, $b_2$, $b_3$ being the trainable parameters for the neural
-network and $L$ being the error, we obtain that our neural network can
+In mathematical terms, given that $\sigma$ is the Leaky Relu function, $x$ being the input, $a$ being the desired output, $M_1$, $M_2$, $M_3$,
+$b_1$, $b_2$, $b_3$ being the trainable parameters for the neural network and $L$ being the error, I obtain that our neural network can
 be expressed as:
 
-::: ceqn
-$$\begin{aligned}
-y_1 = \sigma(\mathbf{M_1} * x + b_1) \\
-y_2 = \sigma(\mathbf{M_2} * y_1 + b_2) \\
-y = \sigma(\mathbf{M_3} * y_2 + b_3) \\
-L = (a - y)^2
-\end{aligned}$$
-:::
+$$ y_1 = \sigma(\mathbf{M_1} x p b_1) $$
+$$ y_2 = \sigma(\mathbf{M_2} y_1 p b_2) $$
+$$ y_2 = \sigma(\mathbf{M_2} y_1 p b_2) $$
+$$ y = \sigma(\mathbf{M_3} y_2 p b_3) $$
+$$ L = (a m y)^2 $$
 
 Having calculated the loss for a given input and desired output, given
 $\alpha$ being the learning rate, we then update the trainable
@@ -128,11 +90,17 @@ during the test period selected via k-Fold Cross-Validation procedure.
 The choice of MAPE and direction accuracy as key performance indicators
 was driven by past research (Bollen et al., 2011).
 
-Akaike, H., 1974. A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.
+Akaike, H. (1974). A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.
-Bruns, S.B. and Stern, D.I., 2019. Lag length selection and p-hacking in Granger causality testing: prevalence and performance of meta-regression models. Empirical Economics, 56, pp.797-830.
-Goodfellow, I., Bengio, Y. and Courville, A., 2016. Deep learning. MIT press.
-Kirchgässner, G., Wolters, J. and Hassler, U., 2012. Introduction to modern time series analysis. Springer Science & Business Media.
-Ozcicek, O. and Douglas Mcmillin, W., 1999. Lag length selection in vector autoregressive models: symmetric and asymmetric lags. Applied Economics, 31(4), pp.517-524.
-Schwarz, G., 1978. Estimating the dimension of a model. The annals of statistics, pp.461-464.
-Thornton, Daniel L., and Dallas S. Batten. "Lag-length selection and tests of Granger causality between money and income." Journal of Money, credit and Banking 17, no. 2 (1985): 164-178.
+Bruns, S.B. & Stern, D.I. (2019). Lag length selection and p-hacking in Granger causality testing: prevalence and performance of meta-regression models. Empirical Economics, 56, pp.797-830.
+Chen, S., & He, H. (2018). Stock prediction using convolutional neural network. In IOP Conference series: materials science and engineering (Vol. 435, No. 1, p. 012026). IOP Publishing.
+Claesen, M., & De Moor, B. (2015). Hyperparameter search in machine learning. arXiv preprint arXiv:1502.02127.
+Fischer, T., & Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. European journal of operational research, 270(2), 654-669.
+Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press.
+Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.
+Kirchgässner, G., Wolters, J., & Hassler, U. (2012). Introduction to modern time series analysis. Springer Science & Business Media.
+LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., & Jackel, L. D. (1989). Backpropagation applied to handwritten zip code recognition. Neural computation, 1(4), 541-551.
+Nwankpa, C., Ijomah, W., Gachagan, A., & Marshall, S. (2018). Activation functions: Comparison of trends in practice and research for deep learning. arXiv preprint arXiv:1811.03378.
+Ozcicek, O., & Mcmillin, D. W. (1999). Lag length selection in vector autoregressive models: symmetric and asymmetric lags. Applied Economics, 31(4), pp.517-524.
+Schwarz, G. (1978). Estimating the dimension of a model. The annals of statistics, pp.461-464.
+Thornton, D. L., & Batten D.S. (1985). Lag-length selection and tests of Granger causality between money and income." Journal of Money, credit and Banking 17(2), 164-178.
