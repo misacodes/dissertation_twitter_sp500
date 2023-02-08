@@ -25,7 +25,7 @@ As outlined previously, all independent variables are standardized to z-scores. 
 $$
 \begin{align}
 \begin{aligned}
-Z_X_t = \frac{{X_t} - {\bar{X_t}}}{\sigma(X_t)}
+Z_Xt = \frac{{X_t} - {\bar{X_t}}}{\sigma(X_t)}
 \end{aligned}
 \end{align}
 $$
