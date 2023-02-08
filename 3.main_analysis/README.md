@@ -3,13 +3,18 @@
 ### Hypotheses
 
 The following hypotheses are tested in this paper:\
+$$
+\begin{align}
+\begin{aligned}
 H1: Daily Twitter sentiment index predicts subsequent SP500 prices.\
 H2: Prevalence of fear expressions on Twitter predicts subsequent SP500 prices.\
 H3: Prevalence of trust expressions on Twitter predicts subsequent SP500 prices.\
 H4: Prevalence of anticipation expressions on Twitter predicts subsequent SP500 prices.\
 H5: Prevalence of joy expressions on Twitter predicts subsequent SP500 prices.\
 H6: Sentiment index and/or aggregate emotions increase the forecasting accuracy of our neural network in predicting SP500 prices.\
-
+\end{aligned}
+\end{align}
+$$
 ### Preanalysis plan
 
 To increase the transparency of my research, and to allow other researchers to exactly replicate my study, I have published a pre-analysis plan prior to testing the hypotheses. The pre-analysis plan is publicly available on the Open Science Framework website, and it can be accessed via the following link: osf.io/anonymous/viewonly.
