@@ -94,6 +94,7 @@ $$
 
 Given my small sample size, I divide the sample into a training set and a testing set by using a k-Fold Cross-Validation, rather than pre-specified training and testing periods. Guided by past research, I select 10 folds (k=10) in our k-Fold Cross-Validation procedure.According to James et al. (2013), k=10 provides a good compromise between computational cost and bias of model performance estimates. Forecasting accuracy is then measured in terms of the average Mean Absolute Percentage Error (MAPE) and the direction accuracy (up or down) during the test period selected via k-Fold Cross-Validation procedure. The choice of MAPE and direction accuracy as key performance indicators was driven by past research (Bollen et al., 2011).
 
+### References
 Akaike, H. (1974). A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.\
 Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.\
 Bruns, S.B. & Stern, D.I. (2019). Lag length selection and p-hacking in Granger causality testing: prevalence and performance of meta-regression models. Empirical Economics, 56, pp.797-830.\
