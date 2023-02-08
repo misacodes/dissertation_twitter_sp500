@@ -63,10 +63,10 @@ be expressed as:
 
 $$ 
 \begin{equation}
-y_1 = \sigma(\mathbf{M_1} x p b_1) \\
-y_2 = \sigma(\mathbf{M_2} y_1 p b_2) \\
-y_2 = \sigma(\mathbf{M_2} y_1 p b_2) \\
-y = \sigma(\mathbf{M_3} y_2 p b_3) \\
+y_1 = \sigma(\mathbf{M_1} x p b_1)\
+y_2 = \sigma(\mathbf{M_2} y_1 p b_2)\
+y_2 = \sigma(\mathbf{M_2} y_1 p b_2)\
+y = \sigma(\mathbf{M_3} y_2 p b_3)\
 L = (a m y)^2 
 \end{equation}
 $$
