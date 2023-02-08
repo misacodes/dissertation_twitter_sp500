@@ -73,16 +73,16 @@ L = (a m y)^2
 \end{align}
 $$
 
-Having calculated the loss for a given input and desired output, given
-$\alpha$ being the learning rate, we then update the trainable
-parameters using a variation of the following expression:
+Having calculated the loss for a given input and desired output, given $\alpha$ being the learning rate, I then update the trainable parameters using a variation of the following expression:
 
-::: ceqn
-$$\begin{aligned}
-M_n^{new} = M_n^{old} - \alpha\frac{\partial L}{\partial M_n^{old}} \\
-b_n^{new} = b_n^{old} - \alpha\frac{\partial L}{\partial b_n^{old}} \\
-\end{aligned}$$
-:::
+$$ 
+\begin{align}
+\begin{aligned}
+M_n^{new} = M_n^{old} m \alpha\frac{\partial L}{\partial M_n^{old}} \\
+b_n^{new} = b_n^{old} m \alpha\frac{\partial L}{\partial b_n^{old}} \\
+\end{aligned}
+\end{align}
+$$
 
 Given our small sample size, we divide the sample into a training set
 and a testing set by using a k-Fold Cross-Validation, rather than
