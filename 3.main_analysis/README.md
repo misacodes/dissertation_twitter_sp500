@@ -44,9 +44,9 @@ L_1:D_t = \alpha p \sum_{i=1}^{n}{\beta_iD_{t m i} p \epsilon_t}\\
 L_2:D_t = \alpha p \sum_{i=1}^{n}{\beta_iD_{t m i} p \sum_{i=1}^{n}{\delta_iX_{t m i}} p \epsilon_t} 
 \end{aligned}
 \end{align}
+$$
 
-Both Model (1) and Model (2) are nested Auto Regressive Distributed Lag models. The nested structure allows me to conduct likelihood ratio F-tests. More specifically, I am testing whether the specific emotions, or the unidimensional Twitter index expressed in variable X have predictive content for S&P500 above and beyond that contained in past changes of S&P 500 prices
-(Kirchgassner, 2012).
+Both Model (1) and Model (2) are nested Auto Regressive Distributed Lag models. The nested structure allows me to conduct likelihood ratio F-tests. More specifically, I am testing whether the specific emotions, or the unidimensional Twitter index expressed in variable X have predictive content for S&P500 above and beyond that contained in past changes of S&P 500 prices (Kirchgassner, 2012).
 
 Granger causality test statistics are very sensitive to the lag length chosen for the underlying VAR model and too high selected number of lags (i.e. overfitting) increases the probability of false positive results (Bruns et al. 2019). Therefore, I choose the exact lag length prior to testing. Given that previous research by Bollen et al. (2011) incorporated 1-7 lags in their linear model specifications and found that some emotions Granger cause DJIA values for up to 6 days worth of lags, I also consider up to 6 day lags for the Granger causality analysis. But out of the potential 1-6 day lag specifications, I only select the one lag specification that minimises both the AIC (Akaike, 1974) and the BIC (Schwarz, 1978) prior to analysis. In case that AIC and BIC yield different results, I use the model which minimises AIC - as recommended by Thornton and Batten (1985), as well as Ozcicek and Mcmillin (1999). To illustrate, in a Monte Carlo simulation study by Ozcicek and Mcmillin (1999), the AIC criterion selects the true lags more frequently than BIC, and also more often than all other considered criteria in symmetric VAR models.
 
@@ -104,17 +104,17 @@ during the test period selected via k-Fold Cross-Validation procedure.
 The choice of MAPE and direction accuracy as key performance indicators
 was driven by past research (Bollen et al., 2011).
 
-Akaike, H. (1974). A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.
-Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.
-Bruns, S.B. & Stern, D.I. (2019). Lag length selection and p-hacking in Granger causality testing: prevalence and performance of meta-regression models. Empirical Economics, 56, pp.797-830.
-Chen, S., & He, H. (2018). Stock prediction using convolutional neural network. In IOP Conference series: materials science and engineering (Vol. 435, No. 1, p. 012026). IOP Publishing.
-Claesen, M., & De Moor, B. (2015). Hyperparameter search in machine learning. arXiv preprint arXiv:1502.02127.
-Fischer, T., & Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. European journal of operational research, 270(2), 654-669.
-Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press.
-Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.
-Kirchgässner, G., Wolters, J., & Hassler, U. (2012). Introduction to modern time series analysis. Springer Science & Business Media.
-LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., & Jackel, L. D. (1989). Backpropagation applied to handwritten zip code recognition. Neural computation, 1(4), 541-551.
-Nwankpa, C., Ijomah, W., Gachagan, A., & Marshall, S. (2018). Activation functions: Comparison of trends in practice and research for deep learning. arXiv preprint arXiv:1811.03378.
-Ozcicek, O., & Mcmillin, D. W. (1999). Lag length selection in vector autoregressive models: symmetric and asymmetric lags. Applied Economics, 31(4), pp.517-524.
-Schwarz, G. (1978). Estimating the dimension of a model. The annals of statistics, pp.461-464.
-Thornton, D. L., & Batten D.S. (1985). Lag-length selection and tests of Granger causality between money and income." Journal of Money, credit and Banking 17(2), 164-178.
+Akaike, H. (1974). A new look at the statistical model identification. IEEE transactions on automatic control, 19(6), pp.716-723.\
+Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. Journal of computational science, 2 (1), 1–8.\
+Bruns, S.B. & Stern, D.I. (2019). Lag length selection and p-hacking in Granger causality testing: prevalence and performance of meta-regression models. Empirical Economics, 56, pp.797-830.\
+Chen, S., & He, H. (2018). Stock prediction using convolutional neural network. In IOP Conference series: materials science and engineering (Vol. 435, No. 1, p. 012026). IOP Publishing.\
+Claesen, M., & De Moor, B. (2015). Hyperparameter search in machine learning. arXiv preprint arXiv:1502.02127.\
+Fischer, T., & Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. European journal of operational research, 270(2), 654-669.\
+Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT press.\
+Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.\
+Kirchgässner, G., Wolters, J., & Hassler, U. (2012). Introduction to modern time series analysis. Springer Science & Business Media.\
+LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., & Jackel, L. D. (1989). Backpropagation applied to handwritten zip code recognition. Neural computation, 1(4), 541-551.\
+Nwankpa, C., Ijomah, W., Gachagan, A., & Marshall, S. (2018). Activation functions: Comparison of trends in practice and research for deep learning. arXiv preprint arXiv:1811.03378.\
+Ozcicek, O., & Mcmillin, D. W. (1999). Lag length selection in vector autoregressive models: symmetric and asymmetric lags. Applied Economics, 31(4), pp.517-524.\
+Schwarz, G. (1978). Estimating the dimension of a model. The annals of statistics, pp.461-464.\
+Thornton, D. L., & Batten D.S. (1985). Lag-length selection and tests of Granger causality between money and income." Journal of Money, credit and Banking 17(2), 164-178.\
