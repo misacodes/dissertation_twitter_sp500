@@ -13,7 +13,7 @@ H6: Sentiment index and/or aggregate emotions increase the forecasting accuracy 
 
 ### Preanalysis plan
 
-To increase the transparency of my research, and to allow other researchers to exactly replicate my study, I have published a pre-analysis plan prior to testing the hypotheses. The pre-analysis plan is publicly available on the Open Science Framework website, and it can be accessed via the following link: osf.io/anonymous/viewonly.
+To increase the transparency of my research, and to allow other researchers to exactly replicate my study, I have published a pre-analysis plan prior to testing the hypotheses. The pre-analysis plan is publicly available on the Open Science Framework website, and it can be accessed via the following link: [osf.io/anonymous/viewonly](https://osf.io/tycf7?view_only=062b256250404122aaa82c5a0b720d75)*.
 
 ### Variables of Interest
 To overcome the small size limitations of past research, the current study uses a large sample of almost 14 million Tweets during the Covid-19 outbreaks to predict subsequent SP500 prices. I investigate the predictive power of both a unidimensional sentiment index (predictor variable 1) and multiple aggregate emotion metrics (predictor variables 2-5) by using linear, as well as non-linear techniques. 
